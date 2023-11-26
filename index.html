@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Clay Club</title>
+    ​
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    ​
+    ​
+    ​
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    ​​<!-- shopping cart icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.0/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="/docs/5.0/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+    ​
+    ​
+    <style>
+        .nav-link {
+            color: #c7b89c !important;
+        }
+
+        .boxbg {
+            background-color: #f2edd7;
+            padding: 10px;
+        }
+       
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            font-size: 17px;
+            padding: 20px;
+
+        }
+
+        #invoice {
+
+            overflow-y: auto;
+            height: 70vh;
+        }
+
+        .itemprice {
+            float: right;
+            color: rgb(158, 99, 43);
+        }
+
+        .item {
+            background-color: #ffedee;
+            margin: 20px;
+            height: 150px;
+            width: 150px;
+            border-radius: 5px;
+            font-size: 1.3em;
+
+        }
+
+        #invoice {
+            font-size: 1.3em;
+        }
+
+        p {
+
+            color: black;
+        }
+
+        #invoice {
+
+            overflow-y: auto;
+            height: 70vh;
+        }
+
+        .itemprice {
+            float: right;
+            color: rgb(158, 99, 43);
+        }
+
+        .item {
+            background-color: #ffedee;
+            margin: 20px;
+            height: 150px;
+            width: 150px;
+            border-radius: 5px;
+            font-size: 1.3em;
+
+        }
+
+        #invoice {
+            font-size: 1.3em;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close1 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close1:hover,
+        .close1:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close2 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close2:hover,
+        .close2:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close3 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close3:hover,
+        .close3:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close4 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close4:hover,
+        .close4:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close5 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close5:hover,
+        .close5:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close6 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close6:hover,
+        .close6:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close7 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close7:hover,
+        .close7:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        .close8 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close8:hover,
+        .close8:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close9 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close9:hover,
+        .close9:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close10 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close10:hover,
+        .close10:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        .close11 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close11:hover,
+        .close11:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close12 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close12:hover,
+        .close12:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close13 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close13:hover,
+        .close13:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close14 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close14:hover,
+        .close14:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close15 {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close15:hover,
+        .close15:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .fa {
+    padding: 20px;
+    font-size: 20px;
+    width: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 6px 6px;
+
+    border-radius: 10%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #c7b89c;
+    color: black;
+}
+
+.fa-twitter {
+    background: #c7b89c;
+    color: black;
+}
+
+.fa-google {
+    background: #c7b89c;
+    color: black;
+}
+    </style>
+
+
+    <link href="cover.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clayclub</title>
+
+</head>
+​
+
+<body class=" h-100 text-center text-white bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">Clay Club</h3>
+
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link " href="p2.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="project2.html">About Us</a>
+                    <a class="nav-link active" aria-current="page" href="project3.html">Our product</a>
+                    <a class="nav-link " href="indexx.html">add Products</a>
+                    <a class="nav-link active" aria-current="page" href="p1.html">Courses</a>
+                    <!-- <i class="material-icons">shopping_cart</i>  -->
+                </nav>
+            </div>
+        </header>
+
+
+    </div>
+    <hr>
+    <br>
+
+
+    <div class="container-fluid bg-light">
+
+        <div class="row">
+            <div class="col-md-9">
+                <div class="row" >
+                    <div class="col-md-3 text-center  ">
+                        <div class="p-2 item" data-price="55" style="
+        background-size: contain;color:#4e3d30;
+        background-image: url(IMG_3690.jpeg);">blue
+
+                        </div>
+
+                        <button id="myBtn">Details</button>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                            <!-- Modal content -->
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <p>Mug by Hasami Porcelain. The mugs are crafted from Hasami’s custom blend of porcelain and clay, which gives the things a lovely matte finish. It's the perfect everyday coffee or tea mug, and both dishwasher and microwave safe.
+                                     <br>
+                                     Measurements:
+                                        9,5 x 6,5 cm
+                                        <br>
+                                        price:55 riyal.
+                                    </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="66.20" class="p-2 item" style="background-size: contain;color:#4e3d30;
+                          background-image: url(IMG_3691.jpeg);">pink</div>
+
+                        <button id="myBtn1">Details</button>
+                        <div id="myModal1" class="modal">
+                            <div class="modal-content">
+                                <span class="close1">&times;</span>
+                                <p>Beautiful unique cup by Danish artist Grit Jansen, who is behind the ceramic brand 'Landskabt' which can be translated as "created by land". The perfect teabowl for snuggling up under a blanket.
+                                      <br>
+                                     Measurements:
+                                         9,5 x 6,5 cm
+                                         <br>
+                                         price:66.20 riyal.
+                                        </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="70.50" class="p-2 item" style="background-size: contain;color:#4e3d30;
+                            background-image: url(IMG-3695.jpg);">black </div>
+
+                        <button id="myBtn2">Details</button>
+                        <div id="myModal2" class="modal">
+                            <div class="modal-content">
+                                <span class="close2">&times;</span>
+                                <p>Beautiful porcelain splatter mugs by English artist Anna Jones. 
+                                    Each mug is slip cast porcelain with a hand painted splattered glaze finish. Due to the making process, each piece is individual and has its own unique markings. The cups shown here are representative of the style, due to the making process each piece is individual and the shades of color may vary slightly
+                                   
+                                    <br>
+                                    Material: Blended Porcelain
+                                    <br>
+                                    Measurements: 90mm diameter x 80mm height (excluding handle)
+                                    <br>
+                                    Volume: 350m
+                                         <br>
+                                         price:70.50 riyal.
+                                        </p>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center   ">
+                        <div data-price="68" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3696.jpg);">ocean</div>
+                        <button id="myBtn3">Details</button>
+                        <div id="myModal3" class="modal">
+                            <div class="modal-content">
+                                <span class="close3">&times;</span>
+                                <p> Beautiful hand-thrown cup by Danish artist Ejnar Paulsen
+                                    Danish artist Ejnar Paulsen is a classically trained ceramist, with more than 40 years of experience. His style is the quintessence of Scandinavian design, the style is simple, elegant, and natural.
+                                    Ejnar Paulsen uses predominantly black, grey, white, and blue glazes. The shapes are simple and elegant - a pure joy to look at. All the ceramics are handmade by Ejnar at his studio at the small Danish island - Bornholm. Bornholm is the center of Danish craft, especially ceramics - for example, The Royal Danish Academy - Design and Ceramics are located at Bornholm.
+                                    The cup is dishwasher safe. Measurements, and pictures are only guiding, each cup may differ in size and color.
+                                
+                                <br>
+                                Measurements:
+                                h 9,5 x 7,5 cm
+                                <br>
+                                price:68 riyal.
+
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="88" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3697.jpg);">dark blue</div>
+                        <button id="myBtn4">Details</button>
+                        <div id="myModal4" class="modal">
+                            <div class="modal-content">
+                                <span class="close4">&times;</span>
+                                <p>The Mazagran Cup by Cica Gomez is inspired by traditional drinkware usually used for coffee, which is named after the town of Mazagran in Algeria.
+                                    The result is a unique mix of straight minimalistic shapes and interesting and highly detailed glazes. Every piece is one of a kind - and unique in its shape, color, and details.
+                                <br>
+                                Measurements:
+                                H 9.5 x Ø 9cm
+                                <br>
+                                Materials: Enamelled porcelain. 
+                                <br>
+                                price:88 riyal.
+
+                                
+                            
+                            </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="50" class="p-2 item " style="background-size: contain;color:#4e3d30;
+                         background-image: url(IMG-3698.jpg);">dark green</div>
+                        <button id="myBtn5">Details</button>
+                        <div id="myModal5" class="modal">
+                            <div class="modal-content">
+                                <span class="close5">&times;</span>
+                                <p>Beautiful stoneware mugs by C for Ceramic
+                                    The mugs are handmade by Danish artist Clara Gewecke. Clara creates her work with mold-pressing, where the clay is molded/pressed into a form leaving the bottom of the bowl with a 'crackled' look. 
+                                    Every single mug is unique and therefore each mug may differ in size, shape, and decoration. 
+                                <br>Measurements: 
+                                 D 8.5 x H 7 cm
+                                <br>
+                                
+                                price:50 riyal.
+                            
+                            </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="80" class="p-2 item" style="background-size: contain;color:#4e3d30;
+                            background-image: url(IMG-3699.jpg);">blue b</div>
+                        <button id="myBtn6">Details</button>
+                        <div id="myModal6" class="modal">
+                            <div class="modal-content">
+                                <span class="close6">&times;</span>
+                                <p>Danish artist Ejnar Paulsen is a classically trained ceramist, with more than 40 years of experience. His style is the quintessence of Scandinavian design, the style is simple, elegant and natural. Ejnar uses predominantly black, grey, white and blue glazes. The shapes are simple and elegant - a pure joy to look at. All the ceramics are handmade by Ejnar at his studio at the small Danish island - Bornholm. 
+                                    The mug is dishwasher safe. Measurements and pictures are only guiding, each mug can differ in size and color.
+                                <br>
+                                Measurements: 
+                                h 7-7,5 x 8-9 cm
+                                <br>
+                                price:80 riyal.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="76.5" class="p-2 item" style="background-size: contain;color:#4e3d30;
+                            background-image: url(IMG-3700.jpg);">pinky</div>
+                        <button id="myBtn7">Details</button>
+                        <div id="myModal7" class="modal">
+                            <div class="modal-content">
+                                <span class="close7">&times;</span>
+                                <p>Handmade limited edition porcelain cups decorated with different soils from Denmark, Japan, Italy. Iceland and more. The cups are casted in porcelain. The cups are colored individually using different soils. The soils are applied by hand and variate in color intensity - therefore no two are the same.
+                                    The decorative nuances show a geographical diversity in the natural world that surrounds us. The nuances vary, depending on the specific minerals the local materials contain and the variations tell a story about their origin. The color pallet manifests the richness of nature and is produced without unhealthy chemistry. 
+                                <br>
+                                Measurements: 
+                                w 6 x 8,5 cm
+                                <br>
+                                price:76.5 riyal.
+                                
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="43.5" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3701.jpg);">half blue </div>
+                <button id="myBtn8">Details</button>
+                <div id="myModal8" class="modal">
+                    <div class="modal-content">
+                        <span class="close8">&times;</span>
+                        <p>"Like water, like air" is the central vision that guides Japanese artist Megumi Tsukazaki in the design and creation of her porcelain collection.
+                            She uses simple white clay and lush glass glazing to produce timeless and tranquil pieces, from ceramic jewelry bases to small porcelain containers. 
+                            <br>
+                            Measurements: 
+                            w 6 x 8,5 cm
+                            <br>
+                            price:43.5 riyal.
+                        
+                        </p>
+                    </div>
+                </div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="88" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3702.jpg);">sand</div>
+        <button id="myBtn9">Details</button>
+        <div id="myModal9" class="modal">
+            <div class="modal-content">
+                <span class="close9">&times;</span>
+                <p>Beautiful porcelain tea mug with matching saucer handmade by artists Jeremy and Cath Brown, who are the English couple behind 'Feldspar'. 
+                    While we are all huge fans of a mug to cradle everyday, there is something distinctly pleasing about the sound of a spoon stirring a china cup and then laid to rest on a sea 
+                    <br>
+                    Mug: 
+                    h 6 cm ø 9cm
+                    <br>
+                    Saucer: 13 cm
+                    <br>
+                    
+                    Capacity 100ml
+                    <br>
+                    price:43.5 riyal.
+                </p>
+            </div>
+
+        </div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="12" class="p-2 item " style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3703.jpg);">white </div>
+        <button id="myBtn10">Details</button>
+        <div id="myModal10" class="modal">
+            <div class="modal-content">
+                <span class="close10">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="11" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3704.jpg);">gold </div>
+        <button id="myBtn11">Details</button>
+        <div id="myModal11" class="modal">
+            <div class="modal-content">
+                <span class="close11">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="7" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3705.jpg);">black-gold</div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="3" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3706.jpg);">brown</div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="1" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3707.jpg);">red</div>
+                    </div>
+                    <div class="col-md-3 text-center  ">
+                        <div data-price="2" class="p-2 item" style="background-size: contain;color:#4e3d30;
+        background-image: url(IMG-3708.jpg);">black in white</div>
+                    </div>
+
+
+                </div>
+
+ <div class="row" id="products"></div>
+            </div>
+            <div class="col-md-3">
+                <div id="invoice" style=color:#4e3d30></div>
+                <div style=color:#4e3d30;><span>Total Price</span>
+                    <span id="totalprice">00.0</span>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        // A $( document ).ready() block.
+		    function calculateTotal() {
+                let total = 0.0;
+                $(".itemprice").each(function (index, elem) {
+                    total = total + parseFloat($(this).text());
+                })
+
+                $("#totalprice").text(total.toFixed(2));
+            }
+			
+		function addItem(itemName , itemPrice){
+				$("#invoice").append("<hr>" + itemName);
+				$("#invoice").append("<span class='itemprice'>" + itemPrice + "</span>");
+		}
+        $(document).ready(function () {
+
+
+
+            $(".item").click(function () {
+                console.log("total")
+				addItem($(this).text() , $(this).data("price"));
+                calculateTotal();
+            });
+
+            $(".item").hover(function () {
+                $(this).css("background-color", "yellow");
+            }, function () {
+                $(this).css("background-color", "#ffedee");
+            })
+
+
+        });
+
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        var modal1 = document.getElementById("myModal1");
+
+        var btn1 = document.getElementById("myBtn1");
+
+        var span1 = document.getElementsByClassName("close1")[0];
+
+        btn1.onclick = function () {
+            modal1.style.display = "block";
+        }
+
+        span1.onclick = function () {
+            modal1.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        var modal2 = document.getElementById("myModal2");
+
+        var btn2 = document.getElementById("myBtn2");
+
+        var span2 = document.getElementsByClassName("close2")[0];
+
+        btn2.onclick = function () {
+            modal2.style.display = "block";
+        }
+        span2.onclick = function () {
+            modal2.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+        }
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        var modal3 = document.getElementById("myModal3");
+
+        var btn3 = document.getElementById("myBtn3");
+
+        var span3 = document.getElementsByClassName("close3")[0];
+
+        btn3.onclick = function () {
+            modal3.style.display = "block";
+        }
+        span3.onclick = function () {
+            modal3.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal3) {
+                modal3.style.display = "none";
+            }
+        }
+
+        var modal4 = document.getElementById("myModal4");
+
+        var btn4 = document.getElementById("myBtn4");
+
+        var span4 = document.getElementsByClassName("close4")[0];
+
+        btn4.onclick = function () {
+            modal4.style.display = "block";
+        }
+        span4.onclick = function () {
+            modal4.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal4) {
+                modal4.style.display = "none";
+            }
+        }
+        var modal5 = document.getElementById("myModal5");
+
+        var btn5 = document.getElementById("myBtn5");
+
+        var span5 = document.getElementsByClassName("close5")[0];
+
+        btn5.onclick = function () {
+            modal5.style.display = "block";
+        }
+        span5.onclick = function () {
+            modal5.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal5) {
+                modal5.style.display = "none";
+            }
+        }
+
+        var modal6 = document.getElementById("myModal6");
+
+        var btn6 = document.getElementById("myBtn6");
+
+        var span6 = document.getElementsByClassName("close6")[0];
+
+        btn6.onclick = function () {
+            modal6.style.display = "block";
+        }
+        span6.onclick = function () {
+            modal6.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal6) {
+                modal6.style.display = "none";
+            }
+        }
+
+        var modal7 = document.getElementById("myModal7");
+
+        var btn7 = document.getElementById("myBtn7");
+
+        var span7 = document.getElementsByClassName("close7")[0];
+
+        btn7.onclick = function () {
+            modal7.style.display = "block";
+        }
+        span7.onclick = function () {
+            modal7.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal7) {
+                modal7.style.display = "none";
+            }
+        }
+
+
+        
+        var modal8 = document.getElementById("myModal8");
+
+        var btn8 = document.getElementById("myBtn8");
+
+        var span8 = document.getElementsByClassName("close8")[0];
+
+        btn8.onclick = function () {
+            modal8.style.display = "block";
+        }
+        span8.onclick = function () {
+            modal8.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal8) {
+                modal8.style.display = "none";
+            }
+        }
+
+
+        
+        var modal9 = document.getElementById("myModal9");
+
+        var btn9 = document.getElementById("myBtn9");
+
+        var span9 = document.getElementsByClassName("close9")[0];
+
+        btn9.onclick = function () {
+            modal9.style.display = "block";
+        }
+        span9.onclick = function () {
+            modal9.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal9) {
+                modal9.style.display = "none";
+            }
+        }
+
+
+        
+        var modal10 = document.getElementById("myModal10");
+
+        var btn10 = document.getElementById("myBtn10");
+
+        var span10 = document.getElementsByClassName("close10")[0];
+
+        btn10.onclick = function () {
+            modal10.style.display = "block";
+        }
+        span10.onclick = function () {
+            modal10.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal10) {
+                modal10.style.display = "none";
+            }
+        }
+
+        
+        var modal11 = document.getElementById("myModal11");
+
+        var btn11 = document.getElementById("myBtn11");
+
+        var span11 = document.getElementsByClassName("close11")[0];
+
+        btn11.onclick = function () {
+            modal11.style.display = "block";
+        }
+        span11.onclick = function () {
+            modal11.style.display = "none";
+        }
+        window.onclick = function (event) {
+            if (event.target == modal11) {
+                modal11.style.display = "none";
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    ​
+    ​<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+    ​
+    ​
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCA_qSiyEidDPcQvpTHfZ9eh6WcNwfyjGg",
+            authDomain: "clay-9ec86.firebaseapp.com",
+            projectId: "clay-9ec86",
+            storageBucket: "clay-9ec86.appspot.com",
+            messagingSenderId: "244050657247",
+            appId: "1:244050657247:web:77d0e20278722e0f9e4e6a",
+            measurementId: "G-FPKHL23KS2"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    ​
+    <script src="script2.js"></script>
+
+</body>
+<footer>
+    <a href="#" class="fa fa-facebook"></a>
+   <a href="#" class="fa fa-twitter"></a>
+   <a href="#" class="fa fa-google"></a>
+
+   </footer>
+
+</html>
